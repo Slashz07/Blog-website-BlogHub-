@@ -41,10 +41,10 @@ class mediaUpload{
     getFilePreview(fileId){
         // eslint-disable-next-line no-useless-catch
         try {
-            return this.bucket.getFilePreview(
+            return this.bucket.getFileView(
                 configEnvVar.bucketId,
                 fileId
-            )
+            ).href
         } catch (error) {
             throw error
         }
